@@ -32,9 +32,9 @@ exports.getTodo =  (req, res) => {
 }
 
 exports.updateTodo = (req, res) => {
-  db.Todo.findOneAndUpdate({_id: req.params.todoId}, req.body, {new: true, useFindAndModify: false})
+  db.Todo.findOneAndUpdate({_id: req.params.todoId}, req.body, {new: true, upsert: true,  useFindAndModify:false})
   .then((todo) => {
-    res.json(todo);
+    res.json({message: "todo was updatedd"});
   })
   .catch((err) => {
     res.send(err);
