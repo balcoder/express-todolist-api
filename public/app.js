@@ -9,7 +9,7 @@ $(document).ready(() => {
   })
 
   $('#todoInput').keypress((event) => {
-    if(event.which == 13) {
+    if(event.which == 13) { //pressed enter key
       createTodo();
     }
   });
