@@ -1,7 +1,8 @@
+const config = require("../config.js");
 const mongoose = require("mongoose");
 mongoose.set("debug", true);
 mongoose.connect(
-  "mongodb+srv://balcoder:SquidTodo101@cluster0.fj65c.mongodb.net/todoList2?retryWrites=true&w=majority",
+  `mongodb+srv://${config.mongodb.userName}:${config.mongodb.password}@cluster0.fj65c.mongodb.net/todoList2?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
